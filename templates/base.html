@@ -1,0 +1,22 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Contact Search{% endblock %}</title> <!-- TITLE HERE -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    {% block stylesheet %}{% endblock %}  <!-- STYLESHEET HERE -->
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+    <div class="container">
+      {% block content %}{% endblock %} <!-- CONTENT HERE -->
+    </div>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	  <script src="{% static 'js/project.js' %}"></script>
+    {% block javascript %}{% endblock %} <!-- JAVASCRIPT HERE -->
+  </body>
+</html>

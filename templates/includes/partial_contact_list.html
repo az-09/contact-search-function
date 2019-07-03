@@ -1,0 +1,41 @@
+{% for contact in contacts %}
+    <tr>
+        <td>
+            <img src="{{contact.image.url}}" height="100" width="100">   
+        </td>
+        <td>
+        {{ contact.name }}
+        </td>
+        <td>
+            {{ contact.site }}  
+        </td>
+        <td>
+            {{ contact.phone }} 
+        </td>
+        <td>
+            {{ contact.ext }} 
+        </td>
+        <td>
+            <a href="mailto:{{contact.email}}" target="_top">{{ contact.email }}</a>  
+        </td>
+        <td>
+            {{ contact.department }}  
+        </td>
+        <td>
+            {{ contact.title }}  
+        </td>
+        <td>
+            <button type="button"
+            class="btn btn-warning btn-sm js-update-contact"
+            data-url="{% url 'contact_update' contact.id %}">
+            <i class="fas fa-edit"></i> Edit
+            </button>
+      
+            <button type="button"
+            class="btn btn-danger btn-sm js-delete-contact"
+            data-url="{% url 'contact_delete' contact.id %}">
+            <i class="fas fa-trash-alt"></i> Delete
+            </button>
+        </td>
+    </tr>
+{% endfor %}

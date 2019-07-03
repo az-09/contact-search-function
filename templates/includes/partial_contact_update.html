@@ -1,0 +1,16 @@
+<form method="post" action="{% url 'contact_update' form.instance.pk %}" class="js-contact-update-form" enctype="multipart/form-data">
+   
+    {% csrf_token %}
+    <div class="modal-header">
+        <h4 class="modal-title">Update contact</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <img src="{{contact.image.url}}" class="img-thumbnail" >  
+    {% include 'includes/form.html'%}
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Update contact</button>
+    </div>
+  </form>
